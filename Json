@@ -1,7 +1,9 @@
 {
+  "log": { "loglevel": "warning" },
   "inbounds": [
     {
-      "port": 8080, 
+      "port": 10000,
+      "listen": "0.0.0.0",
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -17,14 +19,13 @@
         "security": "none",
         "xhttpSettings": {
           "path": "/mimomento",
-          "mode": "packet"
+          "mode": "stream-up",
+          "host": "filter-ni.portal-universal.com"
         }
       }
     }
   ],
   "outbounds": [
-    {
-      "protocol": "freedom"
-    }
+    { "protocol": "freedom" }
   ]
 }
