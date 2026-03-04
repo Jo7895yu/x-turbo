@@ -1,4 +1,5 @@
 FROM teddysun/xray:latest
 COPY config.json /etc/xray/config.json
-USER root
+ENV PORT=10000
+EXPOSE 10000
 CMD ["/usr/bin/xray", "-config", "/etc/xray/config.json"]
