@@ -1,24 +1,43 @@
 {
+  "log": {
+    "loglevel": "warning"
+  },
   "inbounds": [
     {
-      "port": 10000,
+      "tag": "VLESS+XHTTP+NONE+8080",
       "listen": "0.0.0.0",
+      "port": 19820,
       "protocol": "vless",
       "settings": {
         "clients": [
-          { "id": "550e8400-e29b-41d4-a716-446655440000" }
+          {
+            "id": "d5b0ee8f-34ef-4d00-b512-74879f1ba9f5"
+          }
         ],
         "decryption": "none"
       },
       "streamSettings": {
         "network": "xhttp",
+        "security": "none",
         "xhttpSettings": {
-          "path": "/mimomento",
-          "mode": "packet",
-          "host": "Filter-ni.portal-universal.com"
+          "path": "/jose",
+          "host": "filter-ni.portal-universal.com",
+          "noSSEHeader": false,
+          "noGRPCHeader": false,
+          "xPaddingBytes": "100-1000",
+          "mode": "stream-up"
         }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       }
     }
   ],
-  "outbounds": [{ "protocol": "freedom" }]
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    }
+  ]
 }
