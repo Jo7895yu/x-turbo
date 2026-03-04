@@ -1,0 +1,30 @@
+{
+  "inbounds": [
+    {
+      "port": 8080, 
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "550e8400-e29b-41d4-a716-446655440000",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "none",
+        "xhttpSettings": {
+          "path": "/mimomento",
+          "mode": "packet"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
